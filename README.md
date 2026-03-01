@@ -60,8 +60,6 @@ ai-news-aggregator/
 │   └── email_digest.html      # Jinja2 HTML email template
 ├── main.py                    # Pipeline orchestrator
 ├── seed_user.py               # One-time user profile setup
-├── clear_db.py                # Utility to reset database
-├── check_db.py                # Utility to inspect database
 ├── config.py                  # All settings and constants
 ├── requirements.txt
 └── .env                       # Your secrets (never commit this!)
@@ -310,7 +308,7 @@ MAX_ARTICLES_PER_DIGEST = 5
 ### Windows Task Scheduler
 
 1. Open **Task Scheduler**
-2. Create Basic Task → name it "AI News Digest"
+2. Create Basic Task → name it "AI New Aggregrator"
 3. Trigger: **Daily** at 8:00 AM
 4. Action: **Start a Program**
 5. Program: `C:\path\to\.venv\Scripts\python.exe`
