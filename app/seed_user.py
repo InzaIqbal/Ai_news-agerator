@@ -13,7 +13,7 @@ session = get_session()
 repo    = UserRepository(session)
 
 # ── Edit these to match YOU ────────────────────────
-NAME        = "Inz Iqbal"
+NAME        = "Inza Iqbal"
 EMAIL       = "inzaiqbal912@gmail.com"
 INTERESTS   = "AI agents, LLMs, OpenAI, Anthropic, Python, backend engineering, startup tech"
 BACKGROUND  = "Software engineer building AI-powered products and multi-agent systems"

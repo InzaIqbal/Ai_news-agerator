@@ -92,7 +92,13 @@ class BlogScraper(BaseScraper):
     def save_to_db(self, items: list[dict]) -> int:
         new_count = 0
         for item in items:
-            saved = self.repo.save(BlogArticle(**item))
-            if saved.id == item["id"]:
-                new_count += 1
+            existing = self.repo.get_by_id(item["id"])
+            if existing:
+                # If article exists but has no content, update it
+                if not existing.content_md and item.get("content_md"):
+                    existing.content_md = item["content_md"]
+                    self.session.commit()
+                continue          # Already in DB — skip
+            self.repo.save(BlogArticle(**item))
+            new_count += 1
         return new_count
